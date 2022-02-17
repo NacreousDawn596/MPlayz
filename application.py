@@ -315,8 +315,7 @@ def search(keyword):
 def download(id):
     idk = YouTube(str(f'http://youtube.com/watch?v={id}'))
     return flask.send_file(idk.streams.filter(progressive=True, file_extension='mp4').first().download(), as_attachment=True, attachment_filename=f"{idk.title}.mp4")
-    #return YouTube(f'http://youtube.com/watch?v={id}').streams.filter(progressive=True, file_extension='mp4').first().download()
-    
+"""
 @app.errorhandler(404)
 def fferr(e):
     return flask.render_template("error.html")
@@ -324,7 +323,7 @@ def fferr(e):
 @app.errorhandler(500)
 def ffverr(e):
     return flask.render_template("error.html")
-    
+"""
     
 
 if '__main__' == __name__:
